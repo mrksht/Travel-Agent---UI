@@ -1,7 +1,7 @@
 const API_URL =
   import.meta.env.VITE_ENV === "dev"
     ? "http://localhost:3000/agent/query"
-    : "travel-agent-langgraph-backend-production.up.railway.app/agent/query";
+    : "https://travel-agent-langgraph-backend-production.up.railway.app/agent/query";
 
 interface QueryAgentRequest {
   message: string;
