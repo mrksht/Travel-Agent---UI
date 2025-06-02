@@ -1,7 +1,7 @@
 const API_URL =
   import.meta.env.VITE_ENV === "dev"
-    ? "http://localhost:3000/agent/query"
-    : "https://travel-agent-langgraph-backend-production.up.railway.app/agent/query";
+    ? "http://localhost:3000"
+    : "https://travel-agent-langgraph-backend-production.up.railway.app";
 
 interface QueryAgentRequest {
   message: string;
@@ -10,7 +10,7 @@ interface QueryAgentRequest {
 
 export const queryAgent = async ({ message, threadId }: QueryAgentRequest) => {
   try {
-    const res = await fetch(API_URL, {
+    const res = await fetch(`${API_URL}/agent/query`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

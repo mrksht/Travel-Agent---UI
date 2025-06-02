@@ -1,7 +1,7 @@
 const API_URL =
   import.meta.env.VITE_ENV === "dev"
     ? "http://localhost:3000"
-    : "https://travel-agent-langgraph-backend-production.up.railway.app/agent/query";
+    : "https://travel-agent-langgraph-backend-production.up.railway.app";
 
 export const checkAuthStatus = async () => {
   try {
