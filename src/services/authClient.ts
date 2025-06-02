@@ -9,6 +9,8 @@ export const checkAuthStatus = async () => {
       credentials: "include",
     });
 
+    console.log('I am here-1', response)
+
     if (!response.ok) {
       const errorText = await response.text();
       throw new Error(`Server responded with ${response.status}: ${errorText}`);

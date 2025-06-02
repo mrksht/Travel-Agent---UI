@@ -1,7 +1,8 @@
-// components/GoogleSignIn.tsx
 import { useCallback, useEffect } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { googleSignIn } from "../services/authClient";
+import { LogIn } from "lucide-react";
+import "../styles/GoogleSignIn.css";
 
 const GoogleSignIn = () => {
   const { login } = useAuth();
@@ -27,12 +28,34 @@ const GoogleSignIn = () => {
 
       window.google.accounts.id.renderButton(
         document.getElementById("gsi-button")!,
-        { theme: "outline", size: "large" }
+        {
+          theme: "outline",
+          size: "large",
+          type: "standard",
+          shape: "rectangular",
+          text: "continue_with",
+          logo_alignment: "left",
+        }
       );
     }
   }, [handleCredentialResponse]);
 
-  return <div id="gsi-button"></div>;
+  return (
+    <div className="signin-container">
+      <div className="signin-card">
+        <div className="signin-logo">
+          <LogIn size={36} strokeWidth={1.5} className="logo-icon" />
+        </div>
+        <h1 className="signin-title">Welcome</h1>
+        <p className="signin-subtitle">
+          Sign in to continue to the application
+        </p>
+        <div className="signin-button-container">
+          <div id="gsi-button" className="gsi-button-wrapper"></div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default GoogleSignIn;
