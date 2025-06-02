@@ -6,7 +6,7 @@ import ResponseDisplay from './components/ResponseDisplay';
 import Footer from './components/Footer';
 import { generateId } from './utils/helpers';
 import { ResponseItem, TripFormData } from './types';
-import { queryAgent } from './services/travelAgentService';
+import { queryAgent } from './services/travelAgentClient';
 import { Loader } from 'lucide-react';
 
 function App() {

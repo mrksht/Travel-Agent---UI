@@ -1,7 +1,11 @@
 import React from 'react';
 import { Compass } from 'lucide-react';
+import { useAuth } from '../hooks/useAuth';
 
 const Header: React.FC = () => {
+
+  const {logout} = useAuth();
+
   return (
     <header className="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 md:p-6">
       <div className="container mx-auto flex items-center justify-between">
@@ -14,8 +18,8 @@ const Header: React.FC = () => {
           <a href="#" className="hover:text-blue-200 transition-colors duration-200">Examples</a>
           <a href="#" className="hover:text-blue-200 transition-colors duration-200">About</a>
         </div>
-        <button className="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors duration-200">
-          Feedback
+        <button className="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium hover:bg-blue-50 transition-colors duration-200" onClick={logout}>
+          Logout
         </button>
       </div>
     </header>
