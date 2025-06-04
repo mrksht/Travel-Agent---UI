@@ -35,7 +35,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
   const checkAuthStatusUtil = async () => {
     try {
-      console.log('I am here')
       const response = await checkAuthStatus();
       setUser(response.user);
     } catch (error) {
